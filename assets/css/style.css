@@ -1,0 +1,992 @@
+        /*=============table of content===========
+1,reset
+2,header
+3,,banner
+4,offer
+5,show
+6,our team
+7,cuisine
+8,select-date
+
+/*======1,reset=====================*/
+        
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+            display: block;
+        }
+        
+        img {
+            width: 100%;
+            display: block;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .d-flex {
+            display: flex;
+        }
+        
+        .center {
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .justify-center {
+            justify-content: center;
+        }
+        
+        .margin-auto {
+            width: fit-content;
+            margin: 0 15px;
+        }
+        /*=============2,header===============*/
+        
+        .header {
+            background-color: white;
+            position: fixed;
+            z-index: 999;
+            width: 100%;
+            top: 0;
+        }
+        
+        .header .menu {
+            padding: 0 8rem;
+            height: 9rem;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header .list-menu {
+            margin-left: auto;
+        }
+        
+        .header .list-menu .list-item .list-link {
+            padding: 0 1.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: gray;
+            transition: 0.4s;
+        }
+        
+        .header .list-menu .list-item .list-link:hover {
+            color: black;
+        }
+        
+        .header .list-menu .list-item .list-link i {
+            font-size: 1.8rem;
+            font-weight: 300;
+        }
+        
+        .header .menu .bar {
+            font-size: 3rem;
+            display: none;
+        }
+        
+        @media (max-width:992px) {
+            .header .menu .list-menu {
+                display: none;
+            }
+            .header .menu .bar {
+                display: block;
+            }
+        }
+        
+        @media (max-width:767px) {
+            .header .container-fluid {
+                padding: 0 0;
+            }
+            .header .logo {
+                margin-left: 3rem;
+            }
+            .header .menu .bar {
+                display: block;
+                margin-right: 3rem;
+            }
+            .header .menu {
+                padding: 0 15px;
+                position: relative;
+                margin: 0px -30px;
+            }
+            .header .menu .list-menu {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                top: 100%;
+                background: black;
+                width: 100%;
+                overflow: hidden;
+                max-height: 0;
+                transition: 1.5s;
+            }
+            ul.list-menu.d-flex.show {
+                max-height: 100vh;
+            }
+            .header .menu .list-menu .list-item .list-link {
+                text-align: center;
+                padding: 1.5rem 0;
+            }
+            .header .menu .list-menu .show {
+                max-height: 100vh;
+            }
+        }
+        /*=====================3,banner=========*/
+        
+        .banner {
+            margin-top: 9rem;
+            background-image: url(../images/banner.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            height: 80vh;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .banner .box {
+            text-align: center;
+        }
+        
+        .banner .img-text1 {
+            position: relative;
+        }
+        
+        .banner .img-text1 .img {
+            width: 3rem;
+            position: absolute;
+            left: 13.9rem;
+            animation-name: img;
+            animation-duration: 2s;
+        }
+        
+        @keyframes img {
+            0% {
+                top: -4rem;
+            }
+            20% {
+                top: 0;
+            }
+            50% {
+                top: -2.5rem;
+            }
+            75% {
+                top: 0;
+            }
+            90% {
+                top: -1rem;
+            }
+            100% {
+                top: 0;
+            }
+        }
+        
+        .banner .text1 {
+            font-size: 7rem;
+            color: yellow;
+            font-family: 'Sacramento', cursive;
+            animation-name: opacity;
+            animation-duration: 6s;
+        }
+        
+        @keyframes opacity {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .banner .text2 {
+            font-size: 1.6rem;
+            color: white;
+            line-height: 0;
+            animation-name: opacity;
+            animation-duration: 4s;
+        }
+        
+        .banner .box .text3-4 {
+            position: relative;
+            height: 23rem;
+            width: 100%;
+        }
+        
+        .banner .box .text3-4 .text3 {
+            position: absolute;
+            right: 50%;
+            transform: translateX(50%);
+            animation-name: text3;
+            animation-duration: 1.5s;
+        }
+        
+        .banner .box .text3-4 .text4 {
+            position: absolute;
+            bottom: 10%;
+            right: 50%;
+            transform: translateX(50%);
+            animation-name: text4;
+            animation-duration: 1.5s;
+        }
+        
+        .banner .text3,
+        .text4 {
+            font-size: 13rem;
+            color: white;
+            font-weight: 900;
+            font-family: "Cormorant Garamond";
+            line-height: 10rem;
+            font-style: italic;
+        }
+        
+        @keyframes text3 {
+            from {
+                right: 100%;
+            }
+            to {
+                right: 50%;
+            }
+        }
+        
+        @keyframes text4 {
+            from {
+                right: 0%;
+            }
+            to {
+                right: 50%;
+            }
+        }
+        
+        .banner .mouse {
+            position: relative;
+            width: 3rem;
+            height: 5rem;
+            border: 2px solid white;
+            border-top-right-radius: 1rem;
+            border-top-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+            margin: 0 auto;
+        }
+        
+        .banner .mouse .dot {
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            right: 50%;
+            transform: translateX(50%);
+            animation: mouse 2.5s 10000;
+        }
+        
+        @keyframes mouse {
+            0% {
+                top: 10%;
+            }
+            70% {
+                top: 70%;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        @media (max-width:767px) {
+            .banner .text3,
+            .text4 {
+                font-size: 10rem;
+            }
+            .banner .box .text3-4 {
+                height: 19rem;
+            }
+        }
+        
+        @media (max-width:576px) {
+            .banner .text3,
+            .text4 {
+                font-size: 8rem;
+            }
+            .banner .box .text3-4 {
+                height: 18rem;
+            }
+            .banner .box {
+                height: 60vh;
+            }
+        }
+        
+        @media (max-width:360px) {
+            .banner .text3,
+            .text4 {
+                font-size: 7rem;
+            }
+            .banner .box .text3-4 {
+                height: 17rem;
+            }
+        }
+        /* ============== side option ============================== */
+        
+        .side-option {
+            background-color: white;
+            border-radius: 5px;
+            position: fixed;
+            z-index: 999;
+            right: 3rem;
+            top: 15rem;
+            box-shadow: -2px 1px 10px #616060;
+        }
+        
+        .side-option .list-option .list-item {
+            border-bottom: 1px solid rgb(219, 216, 216);
+            padding: 5px;
+            position: relative;
+        }
+        
+        .side-option .list-option .text {
+            position: absolute;
+            right: 100%;
+            height: 100%;
+            background-color: white;
+            box-shadow: -2px 1px 10px #616060;
+            width: max-content;
+            margin: -5px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            visibility: hidden;
+            transition: 0.4s;
+        }
+        
+        .side-option .list-option .list-item .list-link {
+            color: gray;
+            height: 5rem;
+            width: 5rem;
+            font-size: 2rem;
+            transition: 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .side-option .list-option .list-item:hover .list-link {
+            background-color: rgb(206, 236, 236);
+            color: blue;
+        }
+        
+        .side-option .list-option .list-item:hover .text {
+            visibility: visible;
+            padding: 0 15px;
+        }
+        
+        @media(max-width: 767px) {
+            .side-option {
+                display: none;
+            }
+        }
+        /* =============== offer =================== */
+        
+        .offer {
+            padding: 5rem 0;
+        }
+        
+        .offer .offer-content .tittle {
+            font-size: 3rem;
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+        }
+        
+        .offer .offer-content .text-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1.5rem 0 5rem;
+        }
+        
+        .offer .offer-content .text-line .line {
+            width: 5rem;
+            height: 1px;
+            background-color: rgb(204, 201, 201);
+        }
+        
+        .offer .offer-content .text-line .text {
+            font-size: 1.5rem;
+            color: rgb(199, 196, 196);
+            padding: 0 15px;
+        }
+        
+        .offer .offer-content .box {
+            margin-bottom: 5rem;
+        }
+        
+        .offer .offer-content .box .name {
+            text-align: center;
+            font-size: 4rem;
+            font-weight: bold;
+            font-family: 'Sacramento', cursive;
+            margin: 3rem 0;
+        }
+        
+        .offer .offer-content .box .description {
+            font-size: 1.6rem;
+            color: gray;
+            text-align: center;
+            line-height: 2.3rem;
+        }
+        
+        @media (max-width:1024px) {
+            .offer .offer-content .box .img {
+                width: 50%;
+                margin: auto;
+            }
+        }
+        
+        @media (max-width:575px) {
+            .offer .offer-content .box .img {
+                width: 80%;
+                margin: auto;
+            }
+        }
+        /* ==================== Show ======================*/
+        
+        .show .bg {
+            margin: 5rem -15px;
+            background-image: url(../images/show1.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 70rem;
+            border-radius: 10px;
+            box-shadow: -2px 1px 40px #616060;
+        }
+        
+        .show .bg1 {
+            margin: 5rem -15px;
+            background-image: url(../images/show2.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 70rem;
+            border-radius: 10px;
+            box-shadow: -2px 1px 40px #616060;
+        }
+        
+        .show .box .tittle {
+            font-family: "Cormorant Garamond";
+            font-size: 5rem;
+        }
+        
+        .show .box .description {
+            font-size: 1.5rem;
+            color: gray;
+            margin: 3rem 0;
+            line-height: 2.5rem;
+        }
+        
+        .show .box .about-us {
+            font-size: 1.5rem;
+            transition: 0.4s;
+            font-weight: bold;
+        }
+        
+        .show .box .about-us:hover {
+            color: orange;
+        }
+        
+        @media (max-width:992px) {
+            .show .bg {
+                height: 30rem;
+            }
+            .show .bg1 {
+                height: 30rem;
+            }
+        }
+        
+        @media (min-width:768px) and (max-width:991px) {
+            .show .box {
+                text-align: center;
+            }
+        }
+        
+        @media (min-width:576px) and (max-width:767px) {
+            .show .box {
+                text-align: center;
+            }
+        }
+        
+        @media (max-width:576px) {
+            .show .box .tittle {
+                font-size: 3rem;
+            }
+            .show .box {
+                text-align: center;
+            }
+        }
+        /* ================ our team =============*/
+        
+        .our-team {
+            padding: 5rem 0;
+        }
+        
+        .our-team .title {
+            font-size: 3rem;
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+        }
+        
+        .our-team .text-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1.5rem 0 5rem;
+        }
+        
+        .our-team .text-line .text {
+            font-size: 1.5rem;
+            color: rgb(199, 196, 196);
+            padding: 0 15px;
+        }
+        
+        .our-team .text-line .line {
+            width: 5rem;
+            height: 1px;
+            background-color: rgb(204, 201, 201);
+        }
+        
+        .our-team .box {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .our-team .box .name {
+            font-size: 1.5rem;
+            margin: 2rem 0;
+            font-weight: bold;
+        }
+        
+        .our-team .box .situation {
+            font-size: 3rem;
+            color: gray;
+        }
+        
+        .our-team .box .description {
+            font-size: 1.5rem;
+            color: gray;
+        }
+        /* ================= cuisine ============== */
+        
+        .cuisine {
+            position: relative;
+        }
+        
+        .cuisine .bg1 {
+            background-image: url(../images/cuisine.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 80em;
+        }
+        
+        .cuisine .bg2 {
+            background-image: url(../images/cuisine2.png);
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100rem;
+            position: absolute;
+            width: 100%;
+            z-index: 2;
+        }
+        
+        .cuisine .block-bottom {
+            padding: 5rem 0;
+            position: absolute;
+            top: 200%;
+            background-color: rgb(214, 223, 219);
+            width: 100%;
+        }
+        
+        .cuisine .customer {
+            text-align: center;
+        }
+        
+        .cuisine .customer .tittle {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .cuisine .customer .text-line {
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .cuisine .customer .text-line .line {
+            width: 5rem;
+            height: 1px;
+            background-color: gray;
+        }
+        
+        .cuisine .customer .text-line .text {
+            font-size: 1.3rem;
+            color: gray;
+            padding: 0 15px;
+        }
+        
+        .cuisine .customer .img {
+            width: 10rem;
+            margin: auto;
+        }
+        
+        .cuisine .customer .description {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            color: gray;
+        }
+        
+        .cuisine .customer .name {
+            font-size: 1.5rem;
+        }
+        
+        .cuisine .customer .job {
+            font-size: 1.5rem;
+            color: gray;
+        }
+        
+        .cuisine .customer .number {
+            font-size: 2rem;
+        }
+        
+        .cuisine .overlay {
+            position: absolute;
+            padding: 15rem 0;
+            background-color: white;
+            z-index: 3;
+            width: fit-content;
+            right: 50%;
+            top: 30%;
+            transform: translateX(50%);
+            border-radius: 3rem;
+            box-shadow: -2px 1px 10px #616060;
+        }
+        
+        .cuisine .overlay .logo {
+            margin: auto;
+            width: 15rem;
+        }
+        
+        .cuisine .overlay .tittle {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .cuisine .overlay .text-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .cuisine .overlay .text-line .line {
+            width: 5rem;
+            height: 1px;
+            background-color: gray;
+        }
+        
+        .cuisine .overlay .text-line .text {
+            font-size: 1.3rem;
+            color: gray;
+            padding: 0 15px;
+        }
+        
+        .cuisine .overlay .box {
+            text-align: center;
+            padding: 0 2rem;
+        }
+        
+        .cuisine .overlay .box .topic {
+            font-size: 3rem;
+            color: orange;
+            margin: 5rem 0;
+        }
+        
+        .cuisine .overlay .box .info-cost {
+            display: flex;
+            justify-content: space-between;
+            font-size: 2rem;
+            border-bottom: 1px dotted gray;
+        }
+        
+        .cuisine .overlay .box .description {
+            margin: 2rem 0 5rem;
+            font-size: 2rem;
+            text-align: left;
+            color: gray;
+        }
+        
+        .cuisine .overlay .button {
+            padding: 2rem 4rem;
+            background-color: white;
+            border: 1px solid gray;
+            border-radius: 3rem;
+            width: fit-content;
+            margin: auto;
+            font-size: 2rem;
+            font-weight: bold;
+            color: gray;
+            transition: 0.3s;
+            margin-top: 5rem;
+        }
+        
+        .cuisine .overlay .button:hover {
+            border: 1px solid orange;
+        }
+        
+        .justify-space-around {
+            justify-content: space-around;
+        }
+        
+        @media (max-width:992px) {
+            .cuisine .overlay .button {
+                font-size: 1.5rem;
+            }
+            .cuisine .overlay .box .description {
+                margin: 1rem 0 4rem;
+                font-size: 1.5rem;
+            }
+            .cuisine .overlay {
+                padding: 10rem 0;
+            }
+        }
+        
+        @media (max-width:768px) {
+            .cuisine .overlay .button {
+                margin-top: 2rem;
+            }
+            .cuisine .overlay .box .topic {
+                margin: 2rem 0;
+            }
+            .cuisine .overlay {
+                padding: 5rem 0;
+                top: 20%;
+            }
+        }
+        /* ================= select-date ================= */
+        
+        .select-date {
+            padding: 5rem 0;
+            background-image: url(../images/select\ date.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: 130rem;
+        }
+        
+        .select-date .block {
+            background-color: white;
+            padding: 4rem;
+            border-radius: 10px;
+        }
+        
+        .select-date .tittle {
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .select-date .text-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .select-date .text-line .text {
+            padding: 0 15px;
+            font-size: 1.5rem;
+            margin: 2rem 0 4rem;
+            color: gray;
+        }
+        
+        .select-date .text-line .line {
+            width: 5rem;
+            height: 1px;
+            background-color: gray;
+        }
+        
+        .select-date .box {
+            margin-bottom: 3rem;
+        }
+        
+        .select-date .box input {
+            font-size: 1.8rem;
+            padding: 2rem;
+            border: none;
+            width: 100%;
+            outline: none;
+            transition: 0.4s;
+            border-bottom: 1px solid rgb(224, 219, 219);
+        }
+        
+        .select-date .box input:focus {
+            border-bottom: 1px solid orange;
+        }
+        
+        .select-date .box input:placeholder {
+            font-size: 1.8rem;
+        }
+        
+        .select-date .box select {
+            width: 100%;
+            font-size: 1.8rem;
+            padding: 2rem;
+            border: none;
+            width: 100%;
+            outline: none;
+            transition: 0.4s;
+            border-bottom: 1px solid rgb(224, 219, 219);
+            line-height: 3rem;
+            color: gray;
+        }
+        
+        .select-date .block .button {
+            color: black;
+            font-size: 2rem;
+            font-weight: bold;
+            width: fit-content;
+            margin: 5rem auto;
+        }
+        /*=================8.map===============*/
+        
+        .map .box {
+            text-align: center;
+        }
+        
+        .map .box .tittle {
+            font-size: 3rem;
+            font-family: "Cormorant Garamond";
+        }
+        
+        .map .box-text {
+            text-align: center;
+            padding: 15rem;
+        }
+        
+        .map .box .date {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.8rem;
+            padding: 2rem 0;
+            margin: 2rem auto;
+            border-bottom: 1px solid gray;
+        }
+        
+        .map .box .date .day {
+            font-weight: bold;
+        }
+        
+        .map .box .date .time {
+            color: gray;
+        }
+        
+        .map .box .info {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .map .box .info .text1 {
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        
+        .map .box .info .text2 {
+            color: gray;
+        }
+        
+        @media (max-width:767px) {
+            .map .box-text {
+                padding: 5rem;
+            }
+        }
+        
+        @media (min-width:768px) and (max-width:991px) {
+            .map .box-text {
+                text-align: center;
+                padding: 2rem;
+            }
+        }
+        
+        @media (min-width:992px) and (max-width:1199px) {
+            .map .box-text {
+                text-align: center;
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width:360px) {
+            .map .box-text {
+                padding: 0rem;
+            }
+        }
+        /* ================ footer ============= */
+        
+        .footer {
+            background-color: #222;
+        }
+        
+        .footer .content {
+            justify-content: space-between;
+            align-items: center;
+            height: 15rem;
+        }
+        
+        .footer .content .text {
+            font-size: 1.8rem;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .footer .content .social .list-item .list-link {
+            font-size: 2rem;
+            color: white;
+            padding-left: 3rem;
+        }
+        
+        @media (max-width:768px) {
+            .footer {
+                padding: 3rem 0;
+            }
+            .footer .content {
+                display: block;
+            }
+            .footer .content .logo {
+                width: 10rem;
+                margin: 2rem auto;
+            }
+            .footer .content .text {
+                text-align: center;
+                margin: 0 0 2rem;
+            }
+            .footer .content .social {
+                width: fit-content;
+                margin: auto;
+            }
+        }
